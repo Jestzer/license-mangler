@@ -1,0 +1,4 @@
+# Define your user settings below. Commented out lines will be ignored. Each entry must be on its own line.
+checkForUpdatesOnLaunch = true
+# licenseFilePath = "/usr/local/license.dat"
+# logFilePath = "/user/local/lmlog.txt"
