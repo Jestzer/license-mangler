@@ -49,7 +49,7 @@ func main() {
 	// Determine any user-defined settings.
 	currentDir, err := os.Getwd() // Get the current working directory.
 	if err != nil {
-		fmt.Print(redText("\nError getting current working directory while looking for user settings : ", err, " Default settings will be used instead."))
+		fmt.Print(redText("\nError getting current working directory while looking for user settings : ", err, " You will be prompted for your settings now instead."))
 		return
 	} else {
 		settingsPath := filepath.Join(currentDir, "settings.txt")
@@ -59,12 +59,12 @@ func main() {
 			// No settings found.
 			return
 		} else if err != nil {
-			fmt.Print(redText("\nError checking for user settings: ", err, " Default settings will be used instead."))
+			fmt.Print(redText("\nError checking for user settings: ", err, " You will be prompted for your settings now instead."))
 		} else {
 			fmt.Print("\nCustom settings found!")
 			file, err := os.Open(settingsPath)
 			if err != nil {
-				fmt.Print(redText("\nError opening settings file: ", err, " Default settings will be used instead."))
+				fmt.Print(redText("\nError opening settings file: ", err, " You will be prompted for your settings now instead."))
 				return
 			}
 			defer file.Close()
@@ -113,7 +113,7 @@ func main() {
 			}
 
 			if err := scanner.Err(); err != nil {
-				fmt.Print(redText("\nError reading settings file:", err, " Default settings will be used instead."))
+				fmt.Print(redText("\nError reading settings file:", err, " You will be prompted for your settings now instead."))
 			}
 		}
 	}
